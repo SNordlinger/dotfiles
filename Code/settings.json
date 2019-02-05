@@ -1,0 +1,32 @@
+{
+    "http.proxyStrictSSL": false,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.dragAndDrop": false,
+    "editor.minimap.enabled": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    "files.eol": "\n",
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorTheme": "Night Owl",
+    "files.associations": {
+        "*.PN": "rg",
+        "*.PND": "rg",
+        "*.PRO": "rg",
+        "*.DEF": "rg",
+        "*.mustache": "html"
+    },
+    "git.autofetch": true,
+    "[python]": {
+        "editor.tabSize": 4
+    },
+    "[rust]": {
+        "editor.tabSize": 4
+    },
+    "window.zoomLevel": 0,
+    "editor.renderWhitespace": "none",
+    "editor.renderControlCharacters": false,
+    "powershell.powerShellExePath": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "workbench.settings.editor": "json",
+    "prettier.singleQuote": true,
+    "prettier.arrowParens": "always"
+}
