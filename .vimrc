@@ -6,6 +6,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
 call plug#end()
 
+set term=screen-256color
+
 syntax on
 color dracula
 set nobackup
