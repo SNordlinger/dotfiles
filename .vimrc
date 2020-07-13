@@ -8,6 +8,7 @@ call plug#end()
 
 set term=screen-256color
 
+set scl=yes
 syntax on
 color dracula
 set nobackup
@@ -38,6 +39,17 @@ map <Leader>f :ALEFix<CR>
 " Copy/paste to OS Clipboard
 map <Leader>y "+y
 map <Leader>p "+p
+
+" WSL yank support
+" Copies anything placed in c register to Windows clipboard
+let s:clip = '/mnt/c/Windows/System32/clip.exe'
+if executable(s:clip)
+  augroup WSLYank
+    autocmd!
+    autocmd TextYankPost * if v:event.regname ==# 'c' | call system(s:clip, @c) | endif
+  augroup END
+  map <Leader>y "cy
+endif
 
 " Airline settings
 
