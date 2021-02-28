@@ -1,3 +1,6 @@
+" Polyglot settings
+let g:polyglot_disabled = ['elm']
+
 call plug#begin('~/.vim/installed')
 Plug 'dracula/vim'
 Plug 'vim-airline/vim-airline'
@@ -62,9 +65,6 @@ endif
 let g:airline#extensions#tabline#enabled = 1 " Show tab line
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
-
-" Polyglot settings
-let g:polyglot_disabled = ['elm']
 
 " Ale settings
 
