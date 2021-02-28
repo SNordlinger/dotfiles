@@ -4,12 +4,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
+Plug 'elmcast/elm-vim'
 call plug#end()
 
 set term=screen-256color
 
 set scl=yes
-syntax on
 color dracula
 set nobackup
 set splitright
@@ -33,8 +33,13 @@ imap jj <Esc>
 let mapleader = ' '
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>w <C-w>
-map <Leader>d :ALEGoToDefinition<CR>
 map <Leader>f :ALEFix<CR>
+map <Leader>d :ALEDetail<CR>
+
+let g:dracula_bold = 0
+let g:dracula_italic = 0
+let g:dracula_underline = 0
+syntax on
 
 " Copy/paste to OS Clipboard
 map <Leader>y "+y
@@ -49,6 +54,7 @@ if executable(s:clip)
     autocmd TextYankPost * if v:event.regname ==# 'c' | call system(s:clip, @c) | endif
   augroup END
   map <Leader>y "cy
+  map <Leader>p "cp
 endif
 
 " Airline settings
@@ -57,16 +63,26 @@ let g:airline#extensions#tabline#enabled = 1 " Show tab line
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
 
+" Polyglot settings
+let g:polyglot_disabled = ['elm']
+
 " Ale settings
 
 let g:ale_linters = {
 \ 'javascript': ['eslint', 'tsserver'],
-\ 'python': ['pylint'],
+\ 'typescript': ['eslint', 'tsserver'],
+\ 'typescriptreact': ['eslint', 'tsserver'],
+\ 'python': ['flake8'],
 \}
 
 let g:ale_fixers = {
 \ 'javascript': ['prettier'],
-\ 'python': ['yapf']
+\ 'javascriptreact': ['prettier'],
+\ 'typescript': ['prettier'],
+\ 'typescriptreact': ['prettier'],
+\ 'json': ['prettier'],
+\ 'python': ['yapf'],
+\ 'elm': ['elm-format']
 \}
 
 let g:ale_python_pylint_options = '--disable=missing-function-docstring,missing-module-docstring,missing-class-docstring'
