@@ -38,6 +38,10 @@ map <Leader>n :NERDTreeToggle<CR>
 map <Leader>w <C-w>
 map <Leader>f :ALEFix<CR>
 map <Leader>d :ALEDetail<CR>
+map <Leader>e :lnext<CR>
+map <Leader>h :bp<CR>
+map <Leader>l :bn<CR>
+map <Leader>q :q<CR>
 
 let g:dracula_bold = 0
 let g:dracula_italic = 0
